@@ -1,0 +1,17 @@
+ public void setDate(View v){
+        Calendar rightnow= Calendar.getInstance();
+         year=rightnow.get(Calendar.YEAR);
+        month=rightnow.get(Calendar.MONTH);
+        day=rightnow.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog mDatePicker=new   DatePickerDialog(MainActivity.this, new OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int selectedyear, int selectedmonth, int selectedday) {
+                set=(EditText)findViewById(R.id.editText5);
+                set.setText(selectedday +"-" +(selectedmonth +1)+"-" +selectedyear);
+
+            }
+        },year,month,day);
+
+        mDatePicker.show();
+    }
